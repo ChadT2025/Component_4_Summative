@@ -2,6 +2,7 @@
   "name": "community-library-summative",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "test": "mocha --ui tdd --require jsdom-global/register tests/**/*.test.js"
   },

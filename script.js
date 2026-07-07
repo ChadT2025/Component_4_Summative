@@ -1,41 +1,41 @@
 //  Starter Array - Do Not Edit this, only manipulate by adding more visitors
 
-// "export" makes the variables and functions modules. Do not remove it.
-// Export does not change how variables and functions work. 
+// "" makes the variables and functions modules. Do not remove it.
+//  does not change how variables and functions work. 
 
-export let customers = [];
+let customers = [];
 
 // =======================================
 // QUESTION 1
 // =======================================
 
 //Fetch The DOM Elements
-export const customerInput = "";
-export const addBtn = "";
-export const customerList = "";
-export const counter = "";
+ const customerInput = document.getElementById("customerInput");
+ const addBtn = document.getElementById("addBtn")
+ const customerList = document.getElementById("customerList")
+ let counter = document.getElementById("counter")
+ 
+
 
 // Complete this function
 
-export function addCustomer()
-{
-
+ function addCustomer(){
     // Retrieve the customer's name
-
-
+    let value = customerInput.value;
+    console.log(value);
 
     // Add customer to array
-
+    customers.push(value);
+    console.log(customers);
+    return customers
 
 
     // Clear the textbox
-
+    customerInput.value = ""; 
 
 
     // Call displayCustomers()
-
-
-
+    displayCustomers();
 }
 
 // =======================================
@@ -43,36 +43,36 @@ export function addCustomer()
 // Complete this function
 // =======================================
 
-export function displayCustomers()
-{
+ function displayCustomers(){
 
     // Clear the list
+    customerList.innerHTML = ""; 
 
 
+    // Loop through the array 
+     for(let i = 0; i < customers.length; i++){
 
-    // Loop through the array
-
-
-
-        // Create a list item
-
-
+         // Create a list item
+        const li = document.createElement("li");
 
         // Display customer
+         customerList.innerHTML += "<li>" + customers[i] + "</li>";
+
+         // Add list item to UL
+         li.textContent = customers[i];
+
+         //Appends the <"li"> to the <ul> element
+        customerList.appendChild(li);
+
+     }
+     
+    // Update customer counter 
+    counter = customers.length;
+    console.log(counter);
+    counter.textContent = customers.length;
 
 
-
-        // Add list item to UL
-
-
-
-    // Update customer counter
-
-
-
-}
-
-
+ }
 // ================================
 //  DO NOT EDIT LINE 78 AND LINE 81
 // =================================
